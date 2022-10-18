@@ -1,0 +1,65 @@
+form {
+    br {
+      display: none;
+    }
+  
+    input:not([type='checkbox']),
+    textarea {
+      resize: none !important;
+      box-shadow: none !important;
+      outline: none !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 10px 25px !important;
+      background: $white !important;
+  
+      &::placeholder {
+        font-size: 0.875rem;
+      }
+    }
+  
+    .politicas {
+      .wpcf7-checkbox {
+        display: inline-flex;
+        gap: 37px;
+  
+        label {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+  
+          .triggerSibling {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+  
+            .checkedTrigger {
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              cursor: pointer;
+            }
+          }
+  
+          input {
+            accent-color: $info;
+          }
+  
+          span {
+            font-size: 12px;
+            color: $primary;
+  
+            a {
+              color: $info;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  .map {
+    margin-top: -210px;
+    height: 700px;
+  }

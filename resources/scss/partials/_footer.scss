@@ -1,0 +1,42 @@
+footer {
+    .container {
+      .nav {
+        .nav-item {
+          .nav-link {
+            color: $white;
+            font-size: 15px;
+            font-weight: 600;
+          }
+        }
+      }
+      .text-footer {
+        i {
+          @include media-breakpoint-down(lg) {
+            font-size: 20px;
+          }
+        }
+        @include media-breakpoint-down(lg) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  
+  .hr-footer {
+    color: $primary;
+    border-color: $primary;
+    border: 1px solid;
+    opacity: 1;
+  }
+  
+  .contato-footer {
+    @include media-breakpoint-down(lg) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .logo-footer {
+      img {
+        width: 80%;
+      }
+  }
