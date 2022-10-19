@@ -2,9 +2,11 @@
     padding-top: 360px;
     top: -250px;
     position: relative;
+    margin-bottom: -250px;
     @include media-breakpoint-down(lg) {
         top: -100px;
         padding-top: 160px;
+        margin-bottom: -100px;
     }
     &:before {
         background: url("../img/bg-equipe.png") center center;

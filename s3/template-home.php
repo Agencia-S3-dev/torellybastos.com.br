@@ -135,6 +135,36 @@ include("header.php");
     </div>
   </section>
 
+  <section id="abrangente" class="py-5">
+    <div class="container py-lg-5 mt-5 mt-lg-0">
+        <h2 class="text-center text-primary font-32 fw-light">
+          Gestão Abrangente
+        </h2>
+        <div class="row mt-5">
+        <?php
+          for ($i = 1; $i <= 6; $i++) {
+          ?>
+            <div class="col-lg-4 mb-4">
+              <div class="border border-primary p-4">
+                <div class="d-flex w-100 row align-items-center">
+                    <div class="col-md-3 mb-2 mb-md-0 text-md-center text-start">
+                        <div class="text-primary font-30 ">
+                          <i class="fa-solid fa-clipboard-user"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="font-16 fw-bold text-secondary text-left text-uppercase">
+                          ATENDIMENTO PERSONALIZADO
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
+  </section>
+
 </main>
 <?php
 include("footer.php");
