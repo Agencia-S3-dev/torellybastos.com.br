@@ -1,0 +1,66 @@
+#sobre {
+    position: relative;
+    &:before {
+        width: 50%;
+        height: 300px;
+        content: "";
+        left: 0;
+        top: -10px;
+        background: $primary;
+        position: absolute;
+        @include media-breakpoint-down(lg) {
+            height: 120px;
+            width: calc(100% - 24px);
+            margin-left: 12px;
+            top: -8px;
+        }
+    }
+    .textoDestaque {
+        p {
+            margin-bottom: 0;
+            @include media-breakpoint-down(lg) {
+                font-size: 24px;
+            }
+        }
+    }
+    .tituloMissao {
+        max-width: 730px;
+        width: calc(100% - 20px);
+        margin: 0 auto;
+        display: table;
+    }
+    .border-pai {
+        border: 1px solid $light;
+        @include media-breakpoint-down(lg) {
+            border: none;
+        }
+        .col-lg-4 {
+            .border-filha {
+                border: none;
+                position: relative;
+                @include media-breakpoint-down(lg) {
+                    border: 1px solid $light;
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: calc(50% - 45px);
+                    height: 90px;
+                    background: $light;
+                    width: 1px;
+                    @include media-breakpoint-down(lg) {
+                        display: none;
+                    }
+                }
+            }
+            &:nth-child(3) {
+                .border-filha {
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
