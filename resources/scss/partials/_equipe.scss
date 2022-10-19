@@ -1,0 +1,43 @@
+#equipe {
+    padding-top: 360px;
+    top: -250px;
+    position: relative;
+    @include media-breakpoint-down(lg) {
+        top: -100px;
+        padding-top: 160px;
+    }
+    &:before {
+        background: url("../img/bg-equipe.png") center center;
+        content: "";
+        background-size: cover;
+        height: calc(100% - 100px);
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .listaPessoas {
+        &:before {
+            content: "";
+            width: 260px;
+            height: 260px;
+            background: $primary;
+            position: absolute;
+            top: -30px;
+            left: -30px;
+        }
+        &:after {
+            content: "";
+            width: 260px;
+            height: 260px;
+            background: $primary;
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+        }
+    }
+}
+.modal-equipe {
+    max-width: 800px;
+    width: 100%;
+}

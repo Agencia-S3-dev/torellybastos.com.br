@@ -3,6 +3,7 @@ require("bootstrap");
 require("@fortawesome/fontawesome-free");
 require("slick-carousel");
 require("jquery-mask-plugin/dist/jquery.mask.min");
+require('@fancyapps/fancybox');
 
 window._ = require("lodash");
 
@@ -15,6 +16,7 @@ jQuery(function () {
   themeColor();
   masks();
   fixaMenu();
+  carolseuEquipe()
 
   $(window).scroll(function () {
     fixaMenu();
@@ -22,6 +24,7 @@ jQuery(function () {
 
   $(window).on("resize", function () {
     fixaMenu();
+    carolseuEquipe()
   });
 
   $(window).ready(function () {});
@@ -164,4 +167,64 @@ jQuery(function () {
       $("#topo").addClass("ativo");
     }
   }
+
+  function abrirModal() {
+    $(".abrirModal").on("click", function(){
+      let titulo = $(this).attr("data-titulo")
+      let link = $(this).attr("data-link")
+      let setor = $(this).attr("data-setor")
+      let texto  = $(this).attr("data-descricao")
+      let foto  = $(this).attr("data-img")
+      $.fancybox.open(`
+        <div class="modal-equipe">
+          <div class="row">
+          <div class="col-lg-4 mb-3 mb-lg-0">
+            ${foto !== "" ? `
+              <div class="img">
+                <img src="${foto}" alt="">
+              </div>
+            ` : ``}
+          </div>
+          <div class="col-lg-8">
+            ${link !== "" ? `
+              <a class="text-primary font-24" aria-current="page" href="${link}" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            ` : ``}
+            <h2 class="text-secondary font-32 fw-bold">${titulo}</h2>
+            <h3 class="text-secondary font-16 fw-light">${setor}</h3>
+            <div class="font-12 text-secondary">
+              ${texto}
+            </div>
+          </div>
+          </div>
+        </div>
+      `);
+    })
+  }
+  abrirModal()
+
+  
+
+  function carolseuEquipe() {
+    let w = $(window).width();
+    if(w > 720){
+      if($('.carousel-equipe').hasClass("slick-slider")){
+        $('.carousel-equipe').slick('unslick');
+        $(".carousel-equipe").addClass("row")
+        $(".carousel-equipe .carousel-item-equipe").addClass("col-lg-6")
+        abrirModal()
+      }
+    }else{
+      $(".carousel-equipe").removeClass("row")
+      $(".carousel-equipe .carousel-item-equipe").removeClass("col-lg-6")
+      $(".carousel-equipe").not('.slick-initialized').slick({
+        infinite: true,
+        dots: true,
+        arrows: false,
+        // autoplay: true,
+      });
+    }
+  }
+
 });

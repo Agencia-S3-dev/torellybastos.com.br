@@ -34,7 +34,7 @@ include("header.php");
   </div>
 
 
-  <section id="sobre" class="py-5">
+  <section id="sobre" class="py-5 position-relative z-index-5">
     <div class="container py-lg-5">
       <div class="carousel position-relative mt-5 z-index-2">
         <?php
@@ -81,7 +81,7 @@ include("header.php");
         <div class="tituloMissao bg-primary py-3">
           <h3 class="text-white text-uppercase font-15 text-center mb-0">NORTEADORES ESTRATÉGICOS</h3>
         </div>
-        <div class="border-pai p-lg-5">
+        <div class="border-pai p-lg-5 bg-white">
           <div class="row px-lg-4">
 
             <?php
@@ -103,6 +103,33 @@ include("header.php");
             ?>
 
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipe">
+    <div class="container position-relative">
+      <div>
+        <h2 class="font-32 text-primary fw-light text-center">Conheça a Equipe</h2>
+      </div>
+      <div class="listaPessoas mt-5 position-relative">
+        <div class="row position-relative z-index-9 mx-0 carousel-equipe">
+          <?php
+          for ($i = 1; $i <= 2; $i++) {
+          ?>
+            <?php include("partials/card-equipe.php"); ?>
+          <?php } ?>
+          <?php
+          for ($i = 1; $i <= 2; $i++) {
+          ?>
+            <?php include("partials/card-equipe.php"); ?>
+          <?php } ?>
+          <?php
+          for ($i = 1; $i <= 2; $i++) {
+          ?>
+            <?php include("partials/card-equipe.php"); ?>
+          <?php } ?>
         </div>
       </div>
     </div>
