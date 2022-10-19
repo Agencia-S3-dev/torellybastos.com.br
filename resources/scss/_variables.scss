@@ -5,8 +5,8 @@ $xs: 0;
 $sm: 540px;
 $md: 720px;
 $lg: 960px;
-$xl: 1140px;
-$xxl: 1640px;
+$xl: 1100px;
+$xxl: 1120px;
 
 /*containers size*/
 $container-max-widths: (
@@ -27,40 +27,24 @@ $grid-breakpoints: (
 );
 
 /*fonts*/
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-$font: 'Work Sans', sans-serif;
 
-$theme-fonts: (
-  "font": $font,
-);
+
 
 
 /*colors*/
 $primary: #AF8951;
-$secondary: #0d0d0d;
-$dark: #1c1c1c;
-$white: #ffffff;
-$light: #00000029;
-$gray: #868d96;
-$yellow: #fdf5a6;
-$light-gray: #afafaf;
-$warning: #fbd28d;
-$text: #2d323c;
-$transparent: #0000;
+$secondary: #1C1C1C;
+$light: #E2E0E0;
+$gray: #d6d6d6;
 
 $theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  // "success":    $success,
-  // "info":       $info,
-  "warning": $warning,
-  // "danger":     $danger,
-  "light": $light,
-  "dark": $dark,
-  "white": $white,
-  "gray": $gray,
-  "yellow": $yellow,
-  "light-gray": $light-gray,
-  "text": $text,
-  "transparent": $transparent,
+        "primary":    $primary,
+        "secondary":  $secondary,
+        "light":      $light,
+        "gray":       $gray
+        // "success":    $success,
+        // "info":       $info,
+        // "warning":    $warning,
+        // "danger":     $danger,
 );
+

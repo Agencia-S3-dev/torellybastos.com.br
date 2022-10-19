@@ -1,0 +1,87 @@
+#banner {
+    position: relative;
+    margin-bottom: 0;
+    .banner {
+        height: 100vh;
+        position: relative;
+        min-height: 500px;
+        background-position: center center;
+        background-size: cover;
+        overflow: hidden;
+        .container {
+            position: relative;
+            height: 100%;
+            z-index: 2;
+            @include media-breakpoint-down(lg) {
+                overflow: hidden;
+            }
+            .banner-conteudo {
+                width: calc(100% - 24px);
+                bottom: 0;
+                padding: 80px 10px;
+                @include media-breakpoint-down(lg) {
+                    padding: 40px 10px;
+                }
+                p {
+                    margin-bottom: 0;
+                    font-size: 40px;
+                    font-weight: 200;
+                    font-style: italic;
+                    b {
+                        font-weight: 600;
+                    }
+                    @include media-breakpoint-down(lg) {
+                        font-size: 24px;
+                    }
+                }
+                &:before {
+                    content: "";
+                    width: 100%;
+                    right: 50%;
+                    bottom: 0;
+                    position: absolute;
+                    background: $primary;
+                    opacity: 0.9;
+                    height: 100%;
+                    @include media-breakpoint-down(lg) {
+                        right: initial;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .slick-dots {
+        bottom: 30px;
+        left: 30px;
+        @include media-breakpoint-down(lg) {
+            left: 0;
+            bottom: 20px;
+        }
+        li {
+            display: block;
+            @include media-breakpoint-down(lg) {            
+                display: inline-block;
+            }
+            button {
+                width: 8px;
+                height: 8px;
+                background: none;
+                border-radius: 10px;
+                border: 1px solid #fff;
+                margin-top: 5px;
+                &:before {
+                    display: none;
+                }
+                &:hover {
+                    background: #fff;
+                }
+            }
+            &.slick-active {
+                button {
+                    background: #fff;
+                }
+            }
+        }
+    }
+}
