@@ -1,0 +1,15 @@
+#areas {
+    position: relative;
+    height: 750px !important;
+    width: 100%;
+    &:before {
+        background: url("../img/bg-areas.png") center center;
+        content: "";
+        background-size: cover;
+        height: calc(100% - 100px);
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
