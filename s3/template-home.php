@@ -212,6 +212,30 @@ include("header.php");
     </div>
   </section>
 
+  <section id="blog" class="py-5">
+    <div class="container py-lg-5">
+      <div class="row">
+        <div class="col-lg-3 mb-3 mb-lg-3">
+          <div class="text-primary textoDestaque text-center text-lg-start font-32 fw-light ">
+            <p>
+              Confira as Últimas <br> Notícias do Blog
+            </p>
+          </div>
+        </div>
+        <?php
+        for ($i = 1; $i <= 3; $i++) {
+        ?>
+          <div class="col-lg-3 mb-4 mb-lg-3">
+            <?php include("partials/card-blog.php") ?>
+          </div>
+        <?php } ?>
+      </div>
+      <div class="text-center w-100 mt-5">
+        <a href="" class="btn btn-primary text-white px-5 rounded-0" type="button">Conheça o Blog</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 <?php
 include("footer.php");
