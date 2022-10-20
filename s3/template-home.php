@@ -170,11 +170,11 @@ include("header.php");
         <h2 class="text-center text-primary font-32 fw-light">
         Áreas de Atuação
         </h2>
-        <div class="row mt-5">
+        <div class="row mt-5 carousel-areas">
         <?php
           for ($i = 1; $i <= 8; $i++) {
           ?>
-            <div class="col-lg-3 mb-4">
+            <div class="col-lg-3 mb-4 carousel-item-areas">
               <div class=" p-4">
                 <div class="d-flex w-100 row align-items-center">
                     <div class="col-md-3 mb-2 mb-md-0 text-md-center text-start">

@@ -1,11 +1,10 @@
 #areas {
     position: relative;
-    height: 750px !important;
+    min-height: 750px;
     width: 100%;
     &:before {
-        background: url("../img/bg-areas.png") center center;
+        background: url("../img/bg-areas.png") no-repeat top center;
         content: "";
-        background-size: cover;
         height: calc(100% - 100px);
         width: 100%;
         position: absolute;

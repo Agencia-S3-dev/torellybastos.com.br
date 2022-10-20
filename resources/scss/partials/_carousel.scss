@@ -31,3 +31,39 @@
         }
     }
 }
+
+.carousel-areas, .carousel-equipe {
+    .slick-dots {
+        li {
+            button {
+                width: 8px;
+                height: 8px;
+                background: none;
+                border-radius: 10px;
+                border: 1px solid $primary;
+                margin-top: 5px;
+                &:before {
+                    display: none;
+                }
+                &:hover {
+                    background: $primary;
+                }
+            }
+            &.slick-active {
+                button {
+                    background: $primary;
+                }
+            }
+        }
+    }
+}
+.carousel-areas {
+    .slick-dots {
+        bottom: 0!important;
+    }
+}
+.carousel-equipe {
+    .slick-dots {
+        bottom: -60px!important;
+    }
+}
