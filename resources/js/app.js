@@ -18,7 +18,8 @@ jQuery(function () {
   fixaMenu();
   carolseuEquipe();
   carolseuAreas();
-  mapaWidth()
+  mapaWidth();
+  ajustaConteudo();
 
   $(window).scroll(function () {
     fixaMenu();
@@ -28,7 +29,8 @@ jQuery(function () {
     fixaMenu();
     carolseuEquipe();
     carolseuAreas();
-    mapaWidth()
+    mapaWidth();
+    ajustaConteudo();
   });
 
   $(window).ready(function () {});
@@ -162,13 +164,21 @@ jQuery(function () {
     let w = $(window).width();
     let rolagem = $(window).scrollTop();
     if (w > 960) {
+      if (!$("#modeloHome").hasClass("modeloHome")) {
+        $("#topo").addClass("ativo");
+        $("#topo").addClass("ativoInterna");
+      }
       if (rolagem > valor) {
         $("#topo").addClass("ativo");
+        $("#topo").removeClass("ativoInterna");
       } else {
-        $("#topo").removeClass("ativo");
+        if ($("#modeloHome").hasClass("modeloHome")) {
+          $("#topo").removeClass("ativo");
+        }
       }
     } else {
       $("#topo").addClass("ativo");
+      $("#topo").removeClass("ativoInterna");
     }
   }
 
@@ -289,10 +299,16 @@ jQuery(function () {
   function mapaWidth() {
     let w = $(window).width();
     let container = $("#contatoContainer").width();
-    console.log(container)
-    let calculo = (container / 3) + ((w - container) / 2) - 24;
+    let calculo = container / 3 + (w - container) / 2 - 24;
     $("#mapa").css({
-      "width": calculo,
+      width: calculo,
+    });
+  }
+
+  function ajustaConteudo() {
+    let h = $("#topo").height();
+    $("#cabecalho").css({
+      "margin-top": h,
     });
   }
 });

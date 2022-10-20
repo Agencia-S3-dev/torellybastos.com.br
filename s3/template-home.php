@@ -9,7 +9,7 @@
 //if (have_posts()) : while (have_posts()) : the_post();
 include("header.php");
 ?>
-<main role="main">
+<main role="main" id="modeloHome" class="modeloHome">
 
   <div id="banner">
     <?php
