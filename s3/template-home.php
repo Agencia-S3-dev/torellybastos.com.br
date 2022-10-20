@@ -236,6 +236,58 @@ include("header.php");
     </div>
   </section>
 
+  <section id="contato" class="py-5 bg-secondary">
+    <div id="contatoContainer" class="container py-lg-5">
+      <div class="row d-flex flex-row-reverse">
+        <div class="col-lg-8">
+          <div>
+            <h2 class="text-start text-primary font-32 fw-light">
+              Contato
+            </h2>
+            <form class="mt-5" action="">
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control border-0 rounded-0 font-14 text-primary py-2" placeholder="Nome">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="email" class="form-control border-0 rounded-0 font-14 text-primary py-2" placeholder="E-mail">
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="tel" class="form-control border-0 rounded-0 font-14 text-primary py-2" placeholder="Telefone">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control border-0 rounded-0 font-14 text-primary py-2" placeholder="Assunto">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group mb-4">
+                <textarea class="form-control border-0 rounded-0 font-14 text-primary" rows="4" placeholder="Mensagem"></textarea>
+              </div>
+              <!--
+              REVISAR XD TEM CAMPOS DE CHCKBOX PARA RECEBER E-MAILS E ACEITE DE TERMOS
+              -->
+              <div>
+                <input type="submit" class="btn btn-primary px-5 text-white rounded-0" value="Enviar" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-4 mapa">
+            <iframe id="mapa" height="356" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.62086728416!2d-51.18892738454642!3d-30.01904098189159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951979d0fd164371%3A0xc882ec3c2ee7465c!2sR.%20Dom%20Pedro%20II%2C%201351%20-%203%C2%BA%20Andar%20-%20S%C3%A3o%20Jo%C3%A3o%2C%20Porto%20Alegre%20-%20RS%2C%2090550-143!5e0!3m2!1spt-BR!2sbr!4v1666293927411!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 <?php
 include("footer.php");

@@ -1,0 +1,34 @@
+#contato {
+    .mapa {
+        position: relative;
+        @include media-breakpoint-down(lg) {
+            margin-top: 60px;
+        }
+        &:before {
+            content: "";
+            width: 1000px;
+            height: calc(100% + 200px);
+            background: $primary;
+            position: absolute;
+            right: 110px;
+            bottom: 0;
+            @include media-breakpoint-down(lg) {
+                width: 100%;
+                height: calc(100% + 40px);
+                right: initial;
+                right: 50%;
+                top: -24px;
+            }
+        }
+        iframe {
+            right: 20px;
+            top: 0;
+            position: absolute;
+            @include media-breakpoint-down(lg) {
+                position: relative;
+                width: 100%!important;
+                right: 0;
+            }
+        }
+    }
+}

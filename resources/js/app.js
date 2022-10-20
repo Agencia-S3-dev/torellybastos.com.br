@@ -3,7 +3,7 @@ require("bootstrap");
 require("@fortawesome/fontawesome-free");
 require("slick-carousel");
 require("jquery-mask-plugin/dist/jquery.mask.min");
-require('@fancyapps/fancybox');
+require("@fancyapps/fancybox");
 
 window._ = require("lodash");
 
@@ -16,8 +16,9 @@ jQuery(function () {
   themeColor();
   masks();
   fixaMenu();
-  carolseuEquipe()
-  carolseuAreas()
+  carolseuEquipe();
+  carolseuAreas();
+  mapaWidth()
 
   $(window).scroll(function () {
     fixaMenu();
@@ -25,8 +26,9 @@ jQuery(function () {
 
   $(window).on("resize", function () {
     fixaMenu();
-    carolseuEquipe()
-    carolseuAreas()
+    carolseuEquipe();
+    carolseuAreas();
+    mapaWidth()
   });
 
   $(window).ready(function () {});
@@ -130,7 +132,7 @@ jQuery(function () {
     arrows: false,
     autoplay: true,
   });
-  $('.carousel').slick({
+  $(".carousel").slick({
     dots: false,
     infinite: true,
     speed: 300,
@@ -142,17 +144,17 @@ jQuery(function () {
         breakpoint: 900,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2
-        }
+          slidesToScroll: 2,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   });
 
   function fixaMenu() {
@@ -171,28 +173,36 @@ jQuery(function () {
   }
 
   function abrirModal() {
-    $(".abrirModal").on("click", function(){
-      let titulo = $(this).attr("data-titulo")
-      let link = $(this).attr("data-link")
-      let setor = $(this).attr("data-setor")
-      let texto  = $(this).attr("data-descricao")
-      let foto  = $(this).attr("data-img")
+    $(".abrirModal").on("click", function () {
+      let titulo = $(this).attr("data-titulo");
+      let link = $(this).attr("data-link");
+      let setor = $(this).attr("data-setor");
+      let texto = $(this).attr("data-descricao");
+      let foto = $(this).attr("data-img");
       $.fancybox.open(`
         <div class="modal-equipe">
           <div class="row">
           <div class="col-lg-4 mb-3 mb-lg-0">
-            ${foto !== "" ? `
+            ${
+              foto !== ""
+                ? `
               <div class="img">
                 <img src="${foto}" alt="">
               </div>
-            ` : ``}
+            `
+                : ``
+            }
           </div>
           <div class="col-lg-8">
-            ${link !== "" ? `
+            ${
+              link !== ""
+                ? `
               <a class="text-primary font-24" aria-current="page" href="${link}" target="_blank">
                 <i class="fa-brands fa-linkedin"></i>
               </a>
-            ` : ``}
+            `
+                : ``
+            }
             <h2 class="text-secondary font-32 fw-bold">${titulo}</h2>
             <h3 class="text-secondary font-16 fw-light">${setor}</h3>
             <div class="font-12 text-secondary">
@@ -202,25 +212,23 @@ jQuery(function () {
           </div>
         </div>
       `);
-    })
+    });
   }
-  abrirModal()
-
-  
+  abrirModal();
 
   function carolseuEquipe() {
     let w = $(window).width();
-    if(w > 720){
-      if($('.carousel-equipe').hasClass("slick-slider")){
-        $('.carousel-equipe').slick('unslick');
-        $(".carousel-equipe").addClass("row")
-        $(".carousel-equipe .carousel-item-equipe").addClass("col-lg-6")
-        abrirModal()
+    if (w > 720) {
+      if ($(".carousel-equipe").hasClass("slick-slider")) {
+        $(".carousel-equipe").slick("unslick");
+        $(".carousel-equipe").addClass("row");
+        $(".carousel-equipe .carousel-item-equipe").addClass("col-lg-6");
+        abrirModal();
       }
-    }else{
-      $(".carousel-equipe").removeClass("row")
-      $(".carousel-equipe .carousel-item-equipe").removeClass("col-lg-6")
-      $(".carousel-equipe").not('.slick-initialized').slick({
+    } else {
+      $(".carousel-equipe").removeClass("row");
+      $(".carousel-equipe .carousel-item-equipe").removeClass("col-lg-6");
+      $(".carousel-equipe").not(".slick-initialized").slick({
         infinite: true,
         dots: true,
         arrows: false,
@@ -231,17 +239,17 @@ jQuery(function () {
 
   function carolseuAreas() {
     let w = $(window).width();
-    if(w > 720){
-      if($('.carousel-areas').hasClass("slick-slider")){
-        $('.carousel-areas').slick('unslick');
-        $(".carousel-areas").addClass("row")
-        $(".carousel-areas .carousel-item-areas").addClass("col-lg-3")
-        abrirModal()
+    if (w > 720) {
+      if ($(".carousel-areas").hasClass("slick-slider")) {
+        $(".carousel-areas").slick("unslick");
+        $(".carousel-areas").addClass("row");
+        $(".carousel-areas .carousel-item-areas").addClass("col-lg-3");
+        abrirModal();
       }
-    }else{
-      $(".carousel-areas").removeClass("row")
-      $(".carousel-areas .carousel-item-areas").removeClass("col-lg-3")
-      $(".carousel-areas").not('.slick-initialized').slick({
+    } else {
+      $(".carousel-areas").removeClass("row");
+      $(".carousel-areas .carousel-item-areas").removeClass("col-lg-3");
+      $(".carousel-areas").not(".slick-initialized").slick({
         infinite: true,
         dots: true,
         arrows: false,
@@ -252,7 +260,7 @@ jQuery(function () {
     }
   }
 
-  $('.carousel-cliente').slick({
+  $(".carousel-cliente").slick({
     dots: true,
     arrows: false,
     infinite: true,
@@ -265,18 +273,26 @@ jQuery(function () {
         breakpoint: 900,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3
-        }
+          slidesToScroll: 3,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2
-        }
-      }
-    ]
+          slidesToScroll: 2,
+        },
+      },
+    ],
   });
-  
 
+  function mapaWidth() {
+    let w = $(window).width();
+    let container = $("#contatoContainer").width();
+    console.log(container)
+    let calculo = (container / 3) + ((w - container) / 2) - 24;
+    $("#mapa").css({
+      "width": calculo,
+    });
+  }
 });
