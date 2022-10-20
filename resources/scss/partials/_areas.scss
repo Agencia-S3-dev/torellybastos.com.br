@@ -1,14 +1,14 @@
 #areas {
     position: relative;
-    min-height: 750px;
+    min-height: 700px;
     width: 100%;
-    &:before {
-        background: url("../img/bg-areas.png") no-repeat top center;
-        content: "";
-        height: calc(100% - 100px);
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+    background: url("../img/bg-areas.png") no-repeat top center;
+    // &:before {
+    //     content: "";
+    //     height: calc(100% - 100px);
+    //     width: 100%;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    // }
 }

@@ -137,61 +137,78 @@ include("header.php");
 
   <section id="abrangente" class="py-5">
     <div class="container py-lg-5 mt-5 mt-lg-0">
-        <h2 class="text-center text-primary font-32 fw-light">
-          Gestão Abrangente
-        </h2>
-        <div class="row mt-5">
+      <h2 class="text-center text-primary font-32 fw-light">
+        Gestão Abrangente
+      </h2>
+      <div class="row mt-5">
         <?php
-          for ($i = 1; $i <= 6; $i++) {
-          ?>
-            <div class="col-lg-4 mb-4">
-              <div class="border border-primary p-4">
-                <div class="d-flex w-100 row align-items-center">
-                    <div class="col-md-3 mb-2 mb-md-0 text-md-center text-start">
-                        <div class="text-primary font-30 ">
-                          <i class="fa-solid fa-clipboard-user"></i>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="font-16 fw-bold text-secondary text-left text-uppercase">
-                          ATENDIMENTO PERSONALIZADO
-                        </div>
-                    </div>
+        for ($i = 1; $i <= 6; $i++) {
+        ?>
+          <div class="col-lg-4 mb-4">
+            <div class="border border-primary p-4">
+              <div class="d-flex w-100 row align-items-center">
+                <div class="col-md-3 mb-2 mb-md-0 text-md-center text-start">
+                  <div class="text-primary font-30 ">
+                    <i class="fa-solid fa-clipboard-user"></i>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="font-16 fw-bold text-secondary text-left text-uppercase">
+                    ATENDIMENTO PERSONALIZADO
+                  </div>
                 </div>
               </div>
             </div>
-            <?php } ?>
-        </div>
+          </div>
+        <?php } ?>
+      </div>
     </div>
   </section>
 
   <section id="areas" class="py-5">
     <div class="container position-relative py-lg-5 mt-5 mt-lg-0">
-        <h2 class="text-center text-primary font-32 fw-light">
+      <h2 class="text-center text-primary font-32 fw-light">
         Áreas de Atuação
-        </h2>
-        <div class="row mt-5 carousel-areas">
+      </h2>
+      <div class="row mt-5 carousel-areas">
         <?php
-          for ($i = 1; $i <= 8; $i++) {
-          ?>
-            <div class="col-lg-3 mb-4 carousel-item-areas">
-              <div class=" p-4">
-                <div class="d-flex w-100 row align-items-center">
-                    <div class="col-md-3 mb-2 mb-md-0 text-md-center text-start">
-                        <div class="text-primary font-30 ">
-                          <i class="fa-solid fa-clipboard-user"></i>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="font-16 fw-bold text-secondary text-left text-uppercase">
-                          SEGUROS
-                        </div>
-                    </div>
+        for ($i = 1; $i <= 8; $i++) {
+        ?>
+          <div class="col-lg-3 mb-4 carousel-item-areas">
+            <div class=" p-4">
+              <div class="d-flex w-100 row align-items-center">
+                <div class="col-md-3 mb-2 mb-md-0 text-md-center text-start">
+                  <div class="text-primary font-30 ">
+                    <i class="fa-solid fa-clipboard-user"></i>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="font-16 fw-bold text-secondary text-left text-uppercase">
+                    SEGUROS
+                  </div>
                 </div>
               </div>
             </div>
-            <?php } ?>
-        </div>
+          </div>
+        <?php } ?>
+      </div>
+    </div>
+  </section>
+
+  <section id="clientes" class="py-5">
+    <div class="container py-lg-5">
+      <h2 class="text-center text-primary font-32 fw-light">
+        Clientes
+      </h2>
+      <div class="mt-4 carousel-cliente">
+        <?php
+        for ($i = 1; $i <= 12; $i++) {
+        ?>
+          <div class="px-2 img">
+            <img src="https://projetolocomotiva.com.br/wp-content/uploads/2017/08/hdi-seguros-logo-14FA67393D-seeklogo.com_.jpg" alt="">
+          </div>
+        <?php } ?>
+      </div>
     </div>
   </section>
 
