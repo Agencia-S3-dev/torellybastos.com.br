@@ -13,6 +13,10 @@
   @return calc($size / 16px) * 1rem;
 }
 
+hr {
+  opacity: 1;
+}
+
 h1 {
   font-size: clamp(calculateRem(35px), 6vw, calculateRem(40px));
 }
