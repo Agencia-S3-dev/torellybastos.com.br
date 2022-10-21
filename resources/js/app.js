@@ -134,6 +134,14 @@ jQuery(function () {
     arrows: false,
     autoplay: true,
   });
+
+  $(".slider-blog").slick({
+    infinite: true,
+    dots: false,
+    arrows: true,
+    autoplay: true,
+  });
+  
   $(".carousel").slick({
     dots: false,
     infinite: true,

@@ -67,3 +67,48 @@
         bottom: -60px!important;
     }
 }
+.slider-blog {
+    .slider-item {
+        height: 300px;
+    }
+    &:before {
+        content: "";
+        width: 260px;
+        height: 260px;
+        position: absolute;
+        background: $primary;
+        left: -30px;
+        top: -30px;
+    }
+    .slick-arrow {
+        width: 30px;
+        height: 30px;
+        background: $secondary;
+        opacity: 0.8;
+        &:before {
+            display: none;
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 14px;
+        }
+        &:hover {
+            background: $primary;
+        }
+        &.slick-prev {
+            left: -15px;
+            z-index: 9;
+            &:before {
+                display: block;
+                content: "\f060";
+            }
+        }
+        &.slick-next {
+            right: -15px;
+            z-index: 9;
+            &:before {
+                display: block;
+                content: "\f061";
+            }
+        }
+    }
+}

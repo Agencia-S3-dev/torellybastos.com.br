@@ -14,6 +14,24 @@ include("header.php");
     <section class="py-5">
         <div class="container py-lg-5">
             <h2 class="font-32 text-primary fw-light text-center">Confira as Últimas Notícias do Blog</h2>
+            <div class="slider-blog mt-5 position-relative">
+                <?php
+                for ($i = 1; $i <= 3; $i++) {
+                ?>
+                    <div class="slider-item position-relative" style="background-image: url('assets/img/upload/slider.png')">
+                        <div class="w-100 px-5 d-flex position-relative h-100 align-items-center">
+                            <div class="w-100">
+                                <h4 class="font-24 text-white fw-bold text-center w-100 mb-3">
+                                    Lorem ipsum dolor sit amet, consetetur <br> sadipscing elitr, sed diam nonumy eirmod
+                                </h4>
+                                <div class="text-center w-100 w-100">
+                                    <a href="" class="btn btn-primary text-white px-5 rounded-0" type="button">Confira a Matéria</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
             <div class="justify-content-end d-flex d-lg-none mt-4">
                 <a class="btn btn-primary text-white" data-bs-toggle="offcanvas" href="#offcanvas2" role="button" aria-controls="offcanvas2">
                     Filtros
