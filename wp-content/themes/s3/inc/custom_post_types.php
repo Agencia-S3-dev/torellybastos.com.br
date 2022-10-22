@@ -26,24 +26,6 @@ function s3_register_post_types()
             'supports' => array('title'),
         )
     );
-    register_post_type(
-        'carrossel',
-        array(
-            'labels' => array(
-                'name' => 'Carrosséis',
-                'singular_name' => 'Carrossel',
-                'add_new' => 'Adicionar Carrossel',
-                'edit_item' => 'Editar Carrossel',
-                'set_featured_image' => 'Adicionar Carrossel'
-            ),
-            'public' => false,
-            'show_ui' => true,
-            'menu_position' => 5,
-            'menu_icon' => 'dashicons-images-alt2',
-            'has_archive' => false,
-            'supports' => array('title'),
-        )
-    );
 }
 function s3_register_taxonomies()
 {
@@ -65,15 +47,6 @@ function s3_rename_post_label()
     $labels->not_found = 'Nenhum post cadastrado';
     $labels->not_found_in_trash = 'Nenhum post encontrado na lixeira.';
 
-    // Se o icone for um svg descomente o codigo abaixo
-    /*?>
-    <!-- 
-    <style type="text/css">
-        #menu-posts div.wp-menu-image {
-            background-image: url('<?php //echo $menu[5][6]; ?>') !important;
-        }
-    </style> 
-    -->
-    <?php*/
+   
 }
 add_action('admin_menu', 's3_rename_post_label');

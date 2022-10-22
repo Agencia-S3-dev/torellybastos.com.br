@@ -1,9 +1,7 @@
 <?php
 
-//get_header();
+get_header();
 
-//if (have_posts()) : while (have_posts()) : the_post();
-include("header.php");
 ?>
 <main role="main">
     <section class="bg-primary py-5" id="cabecalho">
@@ -41,18 +39,20 @@ include("header.php");
             <div class="row mt-5">
                 <div class="col-md-9">
                     <div class="row">
-                        <?php
-                        for ($i = 1; $i <= 9; $i++) {
-                        ?>
-                            <div class="col-lg-4 mb-4">
-                                <?php include("partials/card-blog.php") ?>
-                            </div>
-                        <?php } ?>
+                        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                                <div class="col-lg-4 mb-4">
+                                    <?php get_template_part('partials/card-blog'); ?>
+                                </div>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                        <div class="col-12 mt-5">
+                            <?php get_template_part('partials/pagination'); ?>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3 d-none d-md-flex">
                     <aside class="w-100">
-                        <?php include("partials/aside.php"); ?>
+                        <?php get_template_part('partials/aside'); ?>
                     </aside>
                 </div>
             </div>
@@ -68,15 +68,12 @@ include("header.php");
         </div>
         <div class="offcanvas-body">
             <div>
-                <?php include("partials/aside.php"); ?>
+                <?php get_template_part('partials/aside'); ?>
             </div>
         </div>
     </div>
 
 </main>
 <?php
-include("footer.php");
-//endwhile; 
-//endif; 
-//get_footer();
+get_footer();
 ?>
