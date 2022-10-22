@@ -30,30 +30,34 @@
     ?>
 </head>
 
+<?php
+global $wp;
+?>
+
 <body <?php body_class();
-        ?>>
+        ?> data-url="<?php echo home_url(); ?>" data-current="<?php echo home_url($wp->request) ?>">
 
     <?php wp_body_open();
     ?>
-
+    `
     <header id="topo" class="z-index-10">
         <div class="bg-secondary">
             <div class="container">
                 <ul class="nav justify-content-end">
-                    <?php if (have_rows('informacoes_da_empresa', 'option')) : ?>
+                    <!-- <?php //if (have_rows('informacoes_da_empresa', 'option')) : ?>
                         <?php
-                        while (have_rows('informacoes_da_empresa', 'option')) : the_row();
+ //                       while (have_rows('informacoes_da_empresa', 'option')) : the_row();
                         ?>
                             <li class="nav-item">
-                                <a href="<?php echo get_sub_field("link")["url"] ?>" class="nav-link text-white font-14 fw-light" target="<?php echo get_sub_field("link")["target"] ?>">
+                                <a href="<?php //echo get_sub_field("link")["url"] ?>" class="nav-link text-white font-14 fw-light" target="<?php //echo get_sub_field("link")["target"] ?>">
                                     <span class="text-primary me-1">
-                                        <?php the_sub_field("icone"); ?>
+                                        <?php //the_sub_field("icone"); ?>
                                     </span>
-                                    <?php echo get_sub_field("link")["title"] ?>
+                                    <?php //echo get_sub_field("link")["title"] ?>
                                 </a>
                             </li>
-                        <?php endwhile; ?>
-                    <?php endif; ?>
+                        <?php //endwhile; ?>
+                    <?php //endif; ?> -->
 
                     <?php if (have_rows('redes_sociais', 'option')) : ?>
                         <?php
@@ -85,19 +89,14 @@
                         </a>
                     </div>
                     <div class="col-lg-8 d-none d-lg-block">
-                        <ul class="nav justify-content-end menu">
-                            <?php if (have_rows('menu_cabecalho', 'option')) : ?>
-                                <?php
-                                while (have_rows('menu_cabecalho', 'option')) : the_row();
-                                ?>
-                                    <li class="nav-item">
-                                        <a href="<?php echo get_sub_field("link")["url"] ?>" class="nav-link " target="<?php echo get_sub_field("link")["target"] ?>">
-                                            <?php echo get_sub_field("link")["title"] ?>
-                                        </a>
-                                    </li>
-                                <?php endwhile; ?>
-                            <?php endif; ?>
-                        </ul>
+                        <?php
+                        wp_nav_menu(array(
+                            'theme_location'    => 'menu-desktop',
+                            'menu_class'        => 'nav justify-content-end menu navMenuScroll',
+                            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                            'walker'            => new WP_Bootstrap_Navwalker(),
+                        ));
+                        ?>
                     </div>
                 </div>
             </div>
@@ -114,19 +113,14 @@
                 <div class="ps-3">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-mobile.svg" alt="">
                 </div>
-                <ul class="nav flex-column mt-3">
-                    <?php if (have_rows('menu_cabecalho', 'option')) : ?>
-                        <?php
-                        while (have_rows('menu_cabecalho', 'option')) : the_row();
-                        ?>
-                            <li class="nav-item">
-                                <a href="<?php echo get_sub_field("link")["url"] ?>" class="nav-link " target="<?php echo get_sub_field("link")["target"] ?>">
-                                    <?php echo get_sub_field("link")["title"] ?>
-                                </a>
-                            </li>
-                        <?php endwhile; ?>
-                    <?php endif; ?>
-                </ul>
+                <?php
+                wp_nav_menu(array(
+                    'theme_location'    => 'menu-desktop',
+                    'menu_class'        => 'nav flex-column mt-3 navMenuScroll',
+                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker'            => new WP_Bootstrap_Navwalker(),
+                ));
+                ?>
                 <?php if (have_rows('redes_sociais', 'option')) : ?>
                     <nav class="nav mt-4">
                         <?php

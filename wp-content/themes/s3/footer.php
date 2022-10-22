@@ -22,34 +22,24 @@
             <div class="col-lg-8">
                 <div class="row">
                     <div class="col-md-3">
-                        <ul class="nav flex-column menuFooter">
-                        <?php if (have_rows('menu_rodape_1', 'option')) : ?>
-                                <?php
-                                while (have_rows('menu_rodape_1', 'option')) : the_row();
-                                ?>
-                                    <li class="nav-item">
-                                        <a href="<?php echo get_sub_field("link")["url"] ?>" class="nav-link " target="<?php echo get_sub_field("link")["target"] ?>">
-                                            <?php echo get_sub_field("link")["title"] ?>
-                                        </a>
-                                    </li>
-                                <?php endwhile; ?>
-                            <?php endif; ?>
-                        </ul>
+                        <?php
+                        wp_nav_menu(array(
+                            'theme_location'    => 'menu-footer-1',
+                            'menu_class'        => 'nav flex-column menuFooter navMenuScroll',
+                            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                            'walker'            => new WP_Bootstrap_Navwalker(),
+                        ));
+                        ?>
                     </div>
                     <div class="col-md-3 mb-4 mb-lg-0">
-                        <ul class="nav flex-column menuFooter">
-                        <?php if (have_rows('menu_rodape_2', 'option')) : ?>
-                                <?php
-                                while (have_rows('menu_rodape_2', 'option')) : the_row();
-                                ?>
-                                    <li class="nav-item">
-                                        <a href="<?php echo get_sub_field("link")["url"] ?>" class="nav-link " target="<?php echo get_sub_field("link")["target"] ?>">
-                                            <?php echo get_sub_field("link")["title"] ?>
-                                        </a>
-                                    </li>
-                                <?php endwhile; ?>
-                            <?php endif; ?>
-                        </ul>
+                        <?php
+                        wp_nav_menu(array(
+                            'theme_location'    => 'menu-footer-2',
+                            'menu_class'        => 'nav flex-column menuFooter navMenuScroll',
+                            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                            'walker'            => new WP_Bootstrap_Navwalker(),
+                        ));
+                        ?>
                     </div>
                     <div class="col-md-6">
                         <ul class="nav">
@@ -67,16 +57,16 @@
                                     </li>
                                 <?php endwhile; ?>
                             <?php endif; ?>
-                            <?php if (have_rows('endereco', 'option')) : ?>
+                            <?php if (have_rows('informacoes_empresa', 'option')) : ?>
                                 <?php
-                                while (have_rows('endereco', 'option')) : the_row();
+                                while (have_rows('informacoes_empresa', 'option')) : the_row();
                                 ?>
                                     <li class="nav-item">
-                                        <a href="<?php echo get_sub_field("link")["url"] ?>" class="d-flex align-items-start nav-link text-white font-14 fw-light" target="<?php echo get_sub_field("link")["target"] ?>">
+                                        <a href="<?php echo get_sub_field("url")["url"] ?>" class="d-flex align-items-start nav-link text-white font-14 fw-light" target="<?php echo get_sub_field("url")["target"] ?>">
                                             <span class="text-primary me-2">
                                                 <?php the_sub_field("icone"); ?>
                                             </span>
-                                            <?php echo get_sub_field("link")["title"] ?>
+                                            <?php echo get_sub_field("url")["title"] ?>
                                         </a>
                                     </li>
                                 <?php endwhile; ?>

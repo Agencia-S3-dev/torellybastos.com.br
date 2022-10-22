@@ -4,10 +4,9 @@
   Template Name: Página Home
 */
 
-//get_header();
+get_header();
 
-//if (have_posts()) : while (have_posts()) : the_post();
-include("header.php");
+if (have_posts()) : while (have_posts()) : the_post();
 ?>
 <main role="main" id="modeloHome" class="modeloHome">
 
@@ -295,8 +294,7 @@ include("header.php");
 
 </main>
 <?php
-include("footer.php");
-//endwhile; 
-//endif; 
-//get_footer();
+endwhile; 
+endif; 
+get_footer();
 ?>

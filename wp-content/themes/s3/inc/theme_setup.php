@@ -18,7 +18,8 @@ add_action( 'after_setup_theme', 's3_register_menus' );
 function s3_register_menus() {
     register_nav_menus( array(
         'menu-desktop'  => 'Menu Principal',
-        'menu-footer'  => 'Menu Rodapé'
+        'menu-footer-1'  => 'Menu Rodapé 1',
+        'menu-footer-2'  => 'Menu Rodapé 2'
     ) );
 }
 

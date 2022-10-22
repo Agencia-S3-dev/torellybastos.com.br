@@ -20,6 +20,7 @@ jQuery(function () {
   carolseuAreas();
   mapaWidth();
   ajustaConteudo();
+  menuScroll();
 
   $(window).scroll(function () {
     fixaMenu();
@@ -141,7 +142,7 @@ jQuery(function () {
     arrows: true,
     autoplay: true,
   });
-  
+
   $(".carousel").slick({
     dots: false,
     infinite: true,
@@ -317,6 +318,46 @@ jQuery(function () {
     let h = $("#topo").height();
     $("#cabecalho").css({
       "margin-top": h,
+    });
+  }
+
+  function menuScroll() {
+    const isValidUrl = (urlString) => {
+      var urlPattern = new RegExp(
+        "^(https?:\\/\\/)?" + // validate protocol
+          "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // validate domain name
+          "((\\d{1,3}\\.){3}\\d{1,3}))" + // validate OR ip (v4) address
+          "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // validate port and path
+          "(\\?[;&a-z\\d%_.~+=-]*)?" + // validate query string
+          "(\\#[-a-z\\d_]*)?$",
+        "i"
+      ); // validate fragment locator
+      return !!urlPattern.test(urlString);
+    };
+
+    $(".navMenuScroll li a").on("click", function () {
+      let urlSite = $("body").attr("data-url");
+      let urlCurrent = $("body").attr("data-current");
+
+      $(".btn-close").trigger("click");
+
+      let valorAtual = $(this).attr("href");
+
+      if (!isValidUrl(valorAtual)) {
+        if (urlSite !== urlCurrent) {
+          window.location.href = `${urlSite}/${valorAtual}`;
+        } else {
+          $("html, body").animate(
+            {
+              scrollTop: $(valorAtual).offset().top - 100,
+            },
+            800
+          );
+        }
+      } else {
+        window.location.href = `${valorAtual}`;
+      }
+      return false;
     });
   }
 });
