@@ -97,6 +97,14 @@ p {
   }
 }
 
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output {
+  color: #fff;
+  font-size: 14px;
+}
+.wpcf7-not-valid-tip {
+  font-size: 14px;
+}
+
 //padding
 @mixin offset-margin($padding, $value) {
   padding-#{$padding}: $value;
