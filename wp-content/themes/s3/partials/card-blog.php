@@ -14,7 +14,7 @@
     <div class="text-secondary fw-light font-14">
         <?php the_excerpt(); ?>
     </div>
-    <a class="text-primary font-14 fw-light text-decoration-none abrirModal" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+    <a class="text-primary font-14 fw-light text-decoration-none" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
         Ver mais
         <i class="fa-solid fa-arrow-right ms-1"></i>
     </a>

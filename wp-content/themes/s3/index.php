@@ -12,24 +12,32 @@ get_header();
     <section class="py-5">
         <div class="container py-lg-5">
             <h2 class="font-32 text-primary fw-light text-center">Confira as Últimas Notícias do Blog</h2>
-            <div class="slider-blog mt-5 position-relative">
-                <?php
-                for ($i = 1; $i <= 3; $i++) {
-                ?>
-                    <div class="slider-item position-relative" style="background-image: url('assets/img/upload/slider.png')">
-                        <div class="w-100 px-5 d-flex position-relative h-100 align-items-center">
-                            <div class="w-100">
-                                <h4 class="font-24 text-white fw-bold text-center w-100 mb-3">
-                                    Lorem ipsum dolor sit amet, consetetur <br> sadipscing elitr, sed diam nonumy eirmod
-                                </h4>
-                                <div class="text-center w-100 w-100">
-                                    <a href="" class="btn btn-primary text-white px-5 rounded-0" type="button">Confira a Matéria</a>
+            <?php
+            $blog = new WP_Query(
+                array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 3,
+                )
+            );
+            if (!empty($blog->have_posts())) :
+            ?>
+                <div class="slider-blog mt-5 position-relative">
+                    <?php while ($blog->have_posts()) : $blog->the_post(); ?>
+                        <div class="slider-item position-relative" style="background-image: url('<?php echo has_post_thumbnail() ? get_the_post_thumbnail_url($post->ID) : get_template_directory_uri()."/assets/img/upload/blog.png"; ?>')">
+                            <div class="w-100 px-5 d-flex position-relative h-100 align-items-center">
+                                <div class="w-100">
+                                    <h4 class="font-24 text-white fw-bold text-center w-100 mb-3">
+                                        <?php the_title(); ?>
+                                    </h4>
+                                    <div class="text-center w-100 w-100">
+                                        <a href="" class="btn btn-primary text-white px-5 rounded-0" type="button">Confira a Matéria</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php } ?>
-            </div>
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
             <div class="justify-content-end d-flex d-lg-none mt-4">
                 <a class="btn btn-primary text-white" data-bs-toggle="offcanvas" href="#offcanvas2" role="button" aria-controls="offcanvas2">
                     Filtros

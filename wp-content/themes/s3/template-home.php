@@ -6,7 +6,6 @@
 
 get_header();
 
-if (have_posts()) : while (have_posts()) : the_post();
 ?>
 <main role="main" id="modeloHome" class="modeloHome">
 
@@ -210,30 +209,37 @@ if (have_posts()) : while (have_posts()) : the_post();
       </div>
     </div>
   </section>
-
-  <section id="blog" class="py-5">
-    <div class="container py-lg-5">
-      <div class="row">
-        <div class="col-lg-3 mb-3 mb-lg-3">
-          <div class="text-primary textoDestaque text-center text-lg-start font-32 fw-light ">
-            <p>
-              Confira as Últimas <br> Notícias do Blog
-            </p>
+  <?php
+  $blog = new WP_Query(
+    array(
+      'post_type' => 'post',
+      'posts_per_page' => 3,
+    )
+  );
+  if (!empty($blog->have_posts())) :
+  ?>
+    <section id="blog" class="py-5">
+      <div class="container py-lg-5">
+        <div class="row">
+          <div class="col-lg-3 mb-3 mb-lg-3">
+            <div class="text-primary textoDestaque text-center text-lg-start font-32 fw-light ">
+              <p>
+                Confira as Últimas <br> Notícias do Blog
+              </p>
+            </div>
           </div>
+          <?php while ($blog->have_posts()) : $blog->the_post(); ?>
+            <div class="col-lg-3 mb-4 mb-lg-3">
+              <?php get_template_part('partials/card-blog'); ?>
+            </div>
+          <?php endwhile; ?>
         </div>
-        <?php
-        for ($i = 1; $i <= 3; $i++) {
-        ?>
-          <div class="col-lg-3 mb-4 mb-lg-3">
-            <?php include("partials/card-blog.php") ?>
-          </div>
-        <?php } ?>
+        <div class="text-center w-100 mt-5">
+          <a href="<?php echo home_url("blog"); ?>" class="btn btn-primary text-white px-5 rounded-0" title="Conheça o Blog">Conheça o Blog</a>
+        </div>
       </div>
-      <div class="text-center w-100 mt-5">
-        <a href="" class="btn btn-primary text-white px-5 rounded-0" type="button">Conheça o Blog</a>
-      </div>
-    </div>
-  </section>
+    </section>
+  <?php endif; ?>
 
   <section id="contato" class="py-5 bg-secondary">
     <div id="contatoContainer" class="container py-lg-5">
@@ -294,7 +300,5 @@ if (have_posts()) : while (have_posts()) : the_post();
 
 </main>
 <?php
-endwhile; 
-endif; 
 get_footer();
 ?>
