@@ -34,15 +34,15 @@
             top: -30px;
             left: -30px;
         }
-        &:after {
-            content: "";
-            width: 260px;
-            height: 260px;
-            background: $primary;
-            position: absolute;
-            bottom: -30px;
-            right: -30px;
-        }
+        // &:after {
+        //     content: "";
+        //     width: 260px;
+        //     height: 260px;
+        //     background: $primary;
+        //     position: absolute;
+        //     bottom: -30px;
+        //     right: -30px;
+        // }
     }
 }
 .modal-equipe {

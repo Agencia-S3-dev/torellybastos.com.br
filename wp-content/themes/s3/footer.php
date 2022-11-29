@@ -11,7 +11,7 @@
                             <?php
                             while (have_rows('redes_sociais', 'option')) : the_row();
                             ?>
-                                <a href="<?php echo get_sub_field("link")["url"] ?>" class="nav-link font-24 ps-0" aria-current="page" target="<?php echo get_sub_field("link")["target"] ?>">
+                                <a href="<?php echo get_sub_field("url")["url"] ?>" class="nav-link font-24 ps-0" aria-current="page" target="<?php echo get_sub_field("url")["target"] ?>">
                                     <?php the_sub_field("icone"); ?>
                                 </a>
                             <?php endwhile; ?>

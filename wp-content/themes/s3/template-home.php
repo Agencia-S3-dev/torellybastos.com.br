@@ -196,7 +196,7 @@ get_header();
           Áreas de Atuação
         </h2>
         <div class="row mt-5 carousel-areas">
-          <?php while ($gestao->have_posts()) : $gestao->the_post(); ?>
+          <?php while ($areas->have_posts()) : $areas->the_post(); ?>
             <div class="col-lg-3 mb-4 carousel-item-areas">
               <div class=" p-4">
                 <div class="d-flex w-100 row align-items-center">
