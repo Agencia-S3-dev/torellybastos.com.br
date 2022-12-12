@@ -39,7 +39,7 @@ global $wp;
 
     <?php wp_body_open();
     ?>
-    `
+    
     <header id="topo" class="z-index-10">
         <div class="bg-secondary">
             <div class="container">
