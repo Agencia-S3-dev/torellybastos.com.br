@@ -21,9 +21,25 @@ get_header();
       <?php while ($banner->have_posts()) : $banner->the_post(); ?>
         <div class="banner" style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID, '1600x768'); ?>')">
           <div class="container">
-            <div class="text-white position-absolute banner-conteudo">
-              <div class="position-relative z-index-2 d-table d-lg-block mx-auto">
+          <div class="row">
+          <div class="d-lg-none d-flex justify-content-center selo-mobile position-absolute">
+                <?php
+                $image = get_field('selo');
+                if (!empty($image)) : ?>
+                  <img src="<?php echo esc_url($image['sizes']['h400']); ?>">
+                <?php endif; ?>
+              </div>
+              </div>
+            <div class="text-white position-absolute banner-conteudo row d-flex">
+              <div class="position-lg-relative z-index-2 d-table d-lg-block mx-auto col-lg-6">
                 <?php the_content(); ?>
+              </div>
+              <div class="col-lg-6 d-lg-flex d-none align-items-start justify-content-end selo-desktop">
+                <?php
+                $image = get_field('selo');
+                if (!empty($image)) : ?>
+                  <img src="<?php echo esc_url($image['sizes']['h400']); ?>">
+                <?php endif; ?>
               </div>
             </div>
           </div>

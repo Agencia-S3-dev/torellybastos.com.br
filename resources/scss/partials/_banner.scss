@@ -16,6 +16,16 @@
             @include media-breakpoint-down(lg) {
                 overflow: hidden;
             }
+            .selo-mobile {
+                bottom: 200px;
+            }
+            .selo-desktop {
+                img {
+                    top: -100px;
+                    width: 500px;
+                    position: absolute;
+                }
+            }
             .banner-conteudo {
                 width: calc(100% - 24px);
                 bottom: 0;
